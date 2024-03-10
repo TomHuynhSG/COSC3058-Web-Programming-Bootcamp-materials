@@ -1,0 +1,40 @@
+a:link {
+    color: green;
+}
+
+a:hover {
+    cursor: progress;
+    background-color: aqua;
+}
+
+a:active {
+    color: red;
+}
+
+a:visited {
+    color: purple;
+}
+
+#color-focus:focus {
+    background-color: pink;
+}
+
+.box1 p:nth-child(2) {
+    color:salmon;
+}
+
+.box1 p:nth-child(odd) {
+    color: deepskyblue;
+}
+
+.box2 p:nth-child(even) {
+    color: forestgreen;
+}
+
+h2:first-child {
+    background-color: green;
+}
+
+p:last-child {
+    background-color: purple;
+}

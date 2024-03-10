@@ -1,0 +1,31 @@
+/* Inline element */
+.inline-example {
+    display: inline;
+    background-color: lightblue;
+    padding: 20px;
+    margin: 30px;
+    border: 1px solid black;
+}
+
+/* Block element */
+.block-example {
+    display: block;
+    background-color: lightgreen;
+    padding: 10px;
+    margin: 20px;
+    border: 1px solid black;
+    width: 250px;
+    height: 140px;
+}
+
+/* Inline-block element */
+.inline-block-example {
+    display: inline-block;
+    background-color: pink;
+    padding: 10px;
+    margin: 20px;
+    border: 1px solid black;
+    width: 200px;
+    height: 180px;
+}
+

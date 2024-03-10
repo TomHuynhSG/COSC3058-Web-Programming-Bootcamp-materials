@@ -1,0 +1,49 @@
+* {
+    color: red;
+}
+
+span {
+    background-color: skyblue;
+}
+
+.red {
+    color: purple;
+}
+
+.yellow-bg {
+    background: yellow;
+}
+
+.fancy {
+    font-weight: bold;
+    text-shadow: 4px 4px 3px green;
+}
+
+#special {
+    background-color: salmon;
+}
+
+a {
+    color: blue;
+}
+
+/* Internal links, beginning with "#" */
+a[href^="#"] {
+    background-color: gold;
+}
+
+/* Links with "example" anywhere in the URL */
+a[href*="example"] {
+    background-color: silver;
+}
+
+/* Links with "insensitive" anywhere in the URL,
+    regardless of capitalization */
+a[href*="insensitive" i] {
+    color: cyan;
+}
+
+/* Links that end in ".org" */
+a[href$=".org"] {
+    color: red;
+}

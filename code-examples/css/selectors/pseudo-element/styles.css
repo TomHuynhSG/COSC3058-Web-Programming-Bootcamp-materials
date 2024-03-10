@@ -1,0 +1,51 @@
+a {
+    color: #0000ff;
+    text-decoration: none;
+}
+
+a::before {
+    content: '🔗';
+}
+
+.local-link::before {
+    content: url('https://interactive-examples.mdn.mozilla.net/media/examples/firefox-logo.svg');
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+
+.target-2::after {
+    content: "Content after";
+    background-color: blue;
+}
+
+.target-4::first-letter {
+    color: green;
+}
+
+div::first-line {
+    color: red;
+}
+
+.exciting-text::after {
+    content: " <- EXCITING!";
+    color: green;
+}
+
+.boring-text::after {
+    content: " <- BORING";
+    color: red;
+}
+
+.story::first-line {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+p::first-letter {
+    font-size: 20px;
+    font-weight: bold;
+    color: brown;
+}
