@@ -30,8 +30,6 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
     box-sizing: border-box;
 } 
 
@@ -155,6 +153,9 @@ a {
 }
 
 #intro{
+    z-index: 0;
     color: white;
     font-size:3vh;
+    position: absolute;
+    bottom: 25px;
 }
