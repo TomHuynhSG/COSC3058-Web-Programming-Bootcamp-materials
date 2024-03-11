@@ -1,0 +1,160 @@
+body {
+    background: #020103; 
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+canvas {
+    opacity: 1;
+}
+
+
+
+@property --rotate {
+    syntax: "<angle>";
+    initial-value: 132deg;
+    inherits: false;
+}
+
+:root {
+    --card-height: 70vh;
+    --card-width: calc(var(--card-height) / 1.5);
+}
+
+
+body {
+    min-height: 100vh;
+    background: #212534;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    box-sizing: border-box;
+} 
+
+.card {
+    position: absolute;
+    top:15%;
+    z-index: 0;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    padding: 3rem 5rem 2rem;
+    box-shadow: 0 0 8rem rgb(231, 59, 59);
+    align-items: center;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    width: var(--card-width);
+    height: var(--card-height);
+    font-family: cursive;
+    cursor: pointer;
+    color: rgb(88 199 250 / 0%);
+    display: flex;
+}
+
+.card::before {
+    content: "";
+    width: 104%;
+    height: 102%;
+    border-radius: 8px;
+    background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+    position: absolute;
+    z-index: -1;
+    top: -1%;
+    left: -2%;
+    animation: spin 2.5s linear infinite;
+}
+
+.card::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    background-image: linear-gradient(var(--rotate), #5ddcff, #3c67e3 43%, #4e00c2);
+    opacity: 1;
+    transition: opacity .5s;
+    animation: spin 2.5s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        --rotate: 0deg;
+    }
+
+    100% {
+        --rotate: 360deg;
+    }
+}
+
+a {
+    color: #212534;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-top: 2rem;
+}
+
+.card {
+    background-color:white;
+    padding: 3vh;
+}
+.business-card {
+    width: var(--card-width);
+    height: var(--card-height);
+    color: black;
+    text-align: center;
+}
+
+.business-card #rmit-logo {
+    width: 50%;
+    margin: 1vh;
+}
+
+.business-card #tom-photo {
+    width: 50%;
+    margin: 1vh;
+}
+
+.business-card h1{
+    font-family: 'Sacramento', cursive;
+    font-size: 7vh;
+    margin: 0px;
+}
+
+.business-card p{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.6vh;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.business-card .contact-box {
+    background-color: #000054;
+    padding: 1vh;
+    width: 80%;
+    /* height: 3vh; */
+    border-radius: 10px;
+    margin: 2vh auto;
+}
+
+.business-card .contact-box a{
+    color: white;
+    text-decoration: none;
+    font-family: 'Merriweather', serif;
+    font-size: 2vh;
+    vertical-align: middle;
+}
+
+#intro{
+    color: white;
+    font-size:3vh;
+}
