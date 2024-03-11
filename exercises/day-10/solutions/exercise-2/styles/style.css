@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: arial;
+    font-size: 15px;
+}
+
+p {
+    font-size: 15px;
+}
+
+/* rule for top level div element */
+#container {
+    width: 1024px;
+    margin: auto;
+}
+
+/* rule for first level nested div element */
+#content {
+    float: right;
+    width: 650px;
+    padding-right: 120px;
+}
+
+h3 {
+    color: red;
+    text-decoration: underline;
+    padding-top: 10px;
+}
+
+input {
+    width: 200px;
+    margin-bottom: 5px;
+}
+
+#registration_form .label {
+    float: left;
+    width: 140px;
+}
+
+#booking_form .label {
+    float: left;
+    width: 300px;
+}
+
+textarea {
+    width: 200px;
+}
+
+/* for errors */
+#registration_form .error {
+    color: red;
+    font-size: 12px;
+    margin-left: 140px;
+    display: none;
+}
+
+#registration_submit {
+    margin-left: 140px;
+}

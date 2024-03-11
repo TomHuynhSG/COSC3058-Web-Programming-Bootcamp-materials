@@ -1,0 +1,16 @@
+/* video hidden by default upon page load */
+
+div#pattern {
+    display:none;
+}
+
+button{
+    background: #4B0082;
+    border: 0;
+    color: white;
+    padding: 15px;
+    border-radius: 20px;
+    transition: 0.4s ease;
+  }
+
+ 

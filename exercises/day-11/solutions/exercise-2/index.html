@@ -1,0 +1,50 @@
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>MovieTime</title>
+        <meta charset="utf-8">
+        <link href="style/styles.css" rel="stylesheet" />
+        <script src="script/movie.js"></script>
+    </head>
+
+    <body>
+        <div id="wrapper">
+            <header>
+                <div id="page-banner">
+                    <h1 class="title" >A page to demonstrate JS and DOM interaction</h1>
+                    <p>A simple movie list</p><br>
+                </div>
+            </header>
+
+            <div id="movie-list">
+                <h2 class="title">Movies to Watch</h2>
+                <ul>
+                    <li>
+                        <span class="name">Oppenheimer</span>
+                        <span class="delete">delete</span>
+                    </li>
+
+                    <li>
+                        <span class="name">Barbie</span>
+                        <span class="delete">delete</span>
+                    </li>
+
+                    <li>
+                        <span class="name">Mission Impossible</span>
+                        <span class="delete">delete</span>
+                    </li>
+
+                    <li>
+                        <span class="name">Gran Turismo</span>
+                        <span class="delete">delete</span>
+                    </li>
+                </ul>
+            </div>
+
+            <form id="add-movie" method="post" action="index.html">
+                <input type="text" placeholder="Add a movie..." />
+                <button>Add</button>
+            </form>
+        </div>
+    </body>
+    </html>
