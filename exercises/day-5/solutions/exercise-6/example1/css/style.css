@@ -1,0 +1,40 @@
+body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  nav {
+    height: 100vh;
+    width:20vw;
+    background-color: #B2DFDB;
+    padding: 1rem;
+  }
+  
+  .nav-title {
+    transform: rotate(90deg);
+    margin-top:50%;
+  }
+  
+  .flex-column-container {
+    display:flex;
+    flex-direction:column;
+    height: 100vh;
+    width:80vw;
+  }
+  
+  main {
+    height: 75%;
+    background-color: #E0F2F1;
+    padding: 1rem;
+  }
+  
+  footer {
+    height: 25%;
+    background-color: #80CBC4;
+    color: #000;
+    padding: 1rem;
+  }
+  

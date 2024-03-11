@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+  }
+  
+  header {
+    background: #80CBC4;
+    height: 15vh;
+  }
+  
+  main {
+    display: flex;
+    height: 100%;
+  }
+  
+  nav {
+    flex: 1;
+    background: #FFAB00;
+  }
+  
+  article {
+    flex: 3;
+    background: #ffd54f;
+  }
+  
+  aside {
+    flex: 2;
+    background: #FFF176;
+  }
+  
+  footer {
+    background: #26A69A;
+    height: 20vh;
+  }
+  
+  header,
+  footer,
+  article,
+  nav,
+  aside {
+    padding: 1em;
+  }
+  
