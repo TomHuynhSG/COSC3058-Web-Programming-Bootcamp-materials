@@ -108,7 +108,7 @@ a {
 .business-card {
     width: var(--card-width);
     height: var(--card-height);
-    color: black;
+    color: rgb(255, 255, 255);
     text-align: center;
 }
 
