@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <nav class="main-nav">
+    <a href="index.html" class="main-nav-link">Home</a>
+    <a href="about.html" class="main-nav-link">About me</a>
+    <a href="contact.html" class="main-nav-link active">Contact</a>
+  </nav>
+
+  <header class="page-header">
+    <div class="content-container">
+      <h1>Contact Us</h1>
+      <p>Have any questions? Please don't hesitate to reach out to us!</p>
+    </div>
+  </header>
+
+  <main>
+    <section class="content-section">
+      <div class="content-container">
+        <h2>Get in Touch</h2>
+        <form action="submit_contact_form.php" method="POST">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="4" required></textarea>
+
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="page-footer">
+    <p>This is the footer of the website.</p>
+  </footer>
+</body>
+
+</html>

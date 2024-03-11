@@ -1,0 +1,49 @@
+/* CSS Document */
+#header, #mainContent, #footer{
+    /*defaut all margin 0,  The browser calculates a margin*/
+	/* 0 is for top-bottom and auto for left-right. 
+       WE USE SHORTHAND NOTATION
+
+	   It means that left and right margin will take auto margin 
+	   according to the width of the element and the width of the container. 
+	   Generally if you want to put any element at center position then 
+	   margin:auto works perfectly
+    */
+    margin:0 auto;
+    width:760px
+}
+
+#header {
+    height:100px;
+    background:#9c6;
+    /* header and main content distance 5 px */
+    margin-bottom:5px;
+}
+
+/* Setting the top, right, bottom, and left properties of a relatively-positioned element 
+   will cause it to be adjusted away from its normal position. Other content will not be 
+	adjusted to fit into any gap left by the element.*/
+	
+#mainContent {
+    position:relative;
+    height:400px;
+}
+
+#sidebar {
+    position:absolute;
+    width:200px;
+    height:398px;
+    background:rgb(153, 216, 255);
+}
+
+#content {
+    margin-left:202px;   
+    width:558;
+    height:398px;
+    background:rgb(255, 230, 170);
+}
+
+#footer {
+    height:60px;
+    background:#9c6;
+}

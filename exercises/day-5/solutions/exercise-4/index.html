@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Page layout using CSS Box Model</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- NAV BAR -->
+  <nav class="main-nav">
+    <a href="index.html" class="main-nav-link">Home</a>
+    <a href="about.html" class="main-nav-link">About me</a>
+    <a href="contact.html" class="main-nav-link">Contact</a>
+  </nav>
+
+  <!-- HEADER -->
+  <header class="page-header">
+    <div class="content-container">
+      <h1>Hello, my name is Node.js</h1>
+      <p>
+        I am a JavaScript runtime built on Chrome's V8 JavaScript engine. I enable
+        developers to build scalable network applications. Node.js uses an event-driven,
+        non-blocking I/O model that makes it lightweight and efficient, perfect for
+        data-intensive real-time applications that run across distributed devices. You will
+        learn about me in the next course, i.e., Web Programming Studio (COSC3058).
+        Also, I can run both on the server and the client-side, making me very versatile.
+      </p>
+    </div>
+  </header>
+
+  <!-- MAIN CONTENT AREA -->
+  <main>
+
+    <section class="content-section">
+      <div class="content-container">
+        <h2>This is me and my friend MongoDB</h2>
+        <p>
+          You'll use me with MongoDB, a NoSQL database, for storing data in a flexible,
+          JSON-like format. Setting up MongoDB and Node.js is straightforward, and they
+          pair well for developing modern web applications.
+          <img src="./images/mongodb.png" alt="MongoDB database" width=300/>
+        </p>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <div class="content-container">
+        <h2>List of websites built with Node.js and MongoDB</h2>
+        <ul>
+          <li>
+            <h3>High-traffic websites using Node.js</h3>
+            <p>
+              LinkedIn and PayPal have significantly improved their web application
+              performance by using Node.js.
+            </p>
+          </li>
+          <li>
+            <h3>Netflix and Uber</h3>
+            <p>
+              These giants have leveraged Node.js to handle their high loads and
+              data-intensive operations.
+            </p>
+          </li>
+          <li>
+            <h3>Trello and Medium</h3>
+            <p>
+              These platforms utilize Node.js for its non-blocking I/O model, enhancing
+              their real-time capabilities.
+            </p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  </main>
+  <footer class="page-footer">
+    <p>This is the footer of the website.</p>
+  </footer>
+</body>
+
+</html>

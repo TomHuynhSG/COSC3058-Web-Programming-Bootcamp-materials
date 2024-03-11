@@ -1,0 +1,110 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    color: #303030;
+    background-color: #fafafa;
+    font-family: "Helvetica", "Arial", sans-serif;
+  }
+  
+  h1,
+  h2,
+  h3 {
+    color: indigo;
+    font-family: "Georgia", "Times", serif;
+    font-weight: 700;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  p {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+  
+  a {
+    color: darkcyan;
+    text-decoration: none;
+  }
+  
+  /* classes for nav bar */
+  /* create space space between each other as well as above and below with padding */
+
+  .main-nav {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+    padding-block-start: 16px;
+    padding-block-end: 16px;
+    border-bottom: 1px solid lightgray;
+  }
+  
+  .main-nav-link {
+    margin-inline-end: 16px;
+  }
+  
+  /* centre content and set width of viewport */
+  /* could also use margin-left and margin-right as well */
+
+  .content-container {
+    max-width: 640px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+  }
+  
+  /* sets the header box dimensions */
+  .page-header {
+    padding-block-start: 32px;
+    padding-block-end: 32px;
+  }
+  
+  .content-section {
+    padding-block-start: 32px;
+    padding-block-end: 32px;
+  }
+  
+  .content-section:nth-child(odd) {
+    background-color: #f0f0f0;
+  }
+  
+  .page-footer {
+    background-color: #3C2A4A;
+    color: #ffffff;
+    padding-block-start: 32px;
+    padding-block-end: 32px;
+  }
+  
+  .page-footer p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  /* Additional styles for form fields */
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: calc(100% - 22px); /* Adjust width to account for padding and border */
+  }
+
+  /* Style for the submit button */
+  button {
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    padding: 14px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+  }
+
+  button:hover {
+    background-color: #45a049; /* Darker shade of green on hover */
+  }
