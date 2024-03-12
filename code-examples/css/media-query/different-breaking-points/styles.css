@@ -2,6 +2,23 @@
 body {
     color: white;
 }
+
+/* small visualization boxes */
+.color-box {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 2px solid black;
+    margin-left: 5px;
+}
+  
+.purple-box { background-color: purple; }
+.darkblue-box { background-color: darkblue; }
+.darkgreen-box { background-color: darkgreen; }
+.darkcyan-box { background-color: darkcyan; }
+.darkred-box { background-color: darkred; }
+
+/* Media Queries */
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     body {
