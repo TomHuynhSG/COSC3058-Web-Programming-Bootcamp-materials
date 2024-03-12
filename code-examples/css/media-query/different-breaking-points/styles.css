@@ -1,4 +1,7 @@
 /* Default color */
+* {
+    font-size: 20px;
+}
 body {
     color: white;
 }
@@ -6,8 +9,8 @@ body {
 /* small visualization boxes */
 .color-box {
     display: inline-block;
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
     border: 2px solid black;
     margin-left: 5px;
 }
