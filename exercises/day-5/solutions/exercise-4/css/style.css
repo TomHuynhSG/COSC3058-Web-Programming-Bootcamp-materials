@@ -51,8 +51,7 @@
 
   .content-container {
     max-width: 640px;
-    margin-inline-start: auto;
-    margin-inline-end: auto;
+    margin: 0 auto;
   }
   
   /* sets the header box dimensions */
@@ -90,7 +89,7 @@
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: calc(100% - 22px); /* Adjust width to account for padding and border */
+    width: 100%; 
   }
 
   /* Style for the submit button */
