@@ -7,4 +7,10 @@
 
 ---
 
-Workshop and exercises materials of COSC3058 here!
+The repository contains teaching and learning materials for workshops and exercises of COSC3058 - Web Programming Bootcamp!
+
+Web Programming Bootcamp builds on Programming Bootcamp 1, in a bootcamp style, i.e. in a focussed mode over a period of 4 weeks.
+
+This course is a technical introduction to web programming techniques, introducing you to the essential concepts of the World Wide Web, and key principles and tools that are used to develop Web applications. The course will provide an overview of Internet technology and introduce you to current Web protocols, client- and server-side programming, communication and design.
+
+This course serves as a pre-requisite for more specialised courses that require web programming.
