@@ -22,7 +22,9 @@ body {
 .wrapper {
     display: grid;
     grid-gap: 10px;
-    grid-template-columns: 200px 200px 200px;
+    /* grid-template-columns: 200px 200px 200px; */
+    /* grid-template-columns: 33% 33% 33%; */
+    grid-template-columns: repeat(3, 2fr);
     grid-template-areas:
     "header  header  header"
     "sidebar content content"
