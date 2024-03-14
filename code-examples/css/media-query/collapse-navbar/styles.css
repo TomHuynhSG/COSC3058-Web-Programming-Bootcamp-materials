@@ -5,7 +5,6 @@ body {
 
 .navbar {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     background-color: #E61E2A;
     color: #fff;
@@ -42,8 +41,6 @@ body {
 
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column;
-        align-items: flex-start;
         height: auto;
         padding: 5px 20px;
     }
