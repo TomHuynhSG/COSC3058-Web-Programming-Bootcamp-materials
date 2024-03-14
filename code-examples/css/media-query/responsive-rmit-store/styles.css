@@ -94,7 +94,14 @@ h1 {
 }
 
 .product {
-	width: calc(33.33% - 40px);
+	/*option 1 using border-box*/
+    width: 33.33%;
+    box-sizing: border-box;
+    padding: 0 20px;
+
+    /*option 2 using calc to manually calculate the exact width*/
+    /* width: calc(33.33% - 40px); */
+
 	margin-bottom: 40px;
 }
 
