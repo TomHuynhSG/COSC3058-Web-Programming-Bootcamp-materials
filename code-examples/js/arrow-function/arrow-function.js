@@ -32,6 +32,8 @@ let sayHello = () => {
 }
 
 // Example 4
+
+
 // Regular function expression
 let isEvenVersion1 = function (number) {
     return number % 2 === 0;
@@ -47,12 +49,7 @@ let isEvenVersion3 = number => {
     return number % 2 === 0;
 }
 
-// Implicit return
-let isEvenVersion4 = number => {
-    number % 2 === 0;
-}
-
-// One-liner implicit return
+// Implicit return in one line
 let isEvenVersion5 = number => number % 2 === 0;
 
 
