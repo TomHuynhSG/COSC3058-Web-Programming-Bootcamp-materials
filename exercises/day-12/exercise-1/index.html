@@ -1,61 +1,64 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="UTF-8">
-  <title>JavaScript Form validation</title>
-  <link type="text/css" rel="stylesheet" href="style/style.css">
-  <script src="script/script.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Price Calculation Based On Quantity</title>
+	<link type="text/css" rel="stylesheet" href="style/style.css">
+
 </head>
+
 <body>
-<form name="contactForm" onsubmit="return validateForm()" action="index.html" method="post">
-    <h2>Registration Form</h2>
-    <div class="row">
-        <label>Full Name</label>
-        <input type="text" name="name">
-        <div class="error" id="nameErr"></div>
-    </div>
-    <div class="row">
-        <label>Email Address</label>
-        <input type="text" name="email">
-        <div class="error" id="emailErr"></div>
-    </div>
-    <div class="row">
-        <label>Mobile Number</label>
-        <input type="text" name="mobile" maxlength="10">
-        <div class="error" id="mobileErr"></div>
-    </div>
-    <div class="row">
-        <label>Country</label>
-        <select name="country">
-            <option>Select</option>
-            <option>Australia</option>
-            <option>Canada</option>
-            <option>United States</option>
-            <option>United Kingdom</option>
-        </select>
-        <div class="error" id="countryErr"></div>
-    </div>
-    <div class="row">
-        <label>Gender</label>
-        <div class="form-inline">
-            <label><input type="radio" name="gender" value="male"> Male</label>
-            <label><input type="radio" name="gender" value="female"> Female</label>
-            <label><input type="radio" name="gender" value="other"> Other</label>
-        </div>
-        <div class="error" id="genderErr"></div>
-    </div>
-    <div class="row">
-        <label>Hobbies</label>
-        <div class="form-inline">
-            <label><input type="checkbox" name="hobbies[]" value="sports"> Sports</label>
-            <label><input type="checkbox" name="hobbies[]" value="movies"> Movies</label>
-            <label><input type="checkbox" name="hobbies[]" value="music">Surfing net</label>
-            <label><input type="checkbox" name="hobbies[]" value="music">Whatever</label>
-        </div>
-    </div>
-    <div class="row">
-        <input type="submit" value="Submit">
-    </div>
-</form>
+
+	<!-- 
+    AN EXERCISE FOR YOU:
+	can you remove table presentation atttributes to css 
+-->
+
+	<table width="400" border="1" cellpadding="5" id="calculator">
+		<tr>
+			<td bgcolor="#CCCCCC">&nbsp;</td>
+			<td width="50" bgcolor="#CCCCCC"><strong>Quantity</strong></td>
+			<td width="50" bgcolor="#CCCCCC"><strong>Price</strong></td>
+		</tr>
+		<tr>
+			<td>Item A</td>
+			<td>
+				<input name="qnt_1" type="text" id="qnt_1" value="0" size="3" data-price="100"
+					onkeyup="CalculateItemsValue()" />
+			</td>
+			<td>$100</td>
+		</tr>
+		<tr>
+			<td>Item B</td>
+			<td><input name="qnt_2" type="text" id="qnt_2" value="0" size="3" data-price="50"
+					onkeyup="CalculateItemsValue()" /></td>
+			<td>$50</td>
+		</tr>
+		<tr>
+			<td>Item C</td>
+			<td><input name="qnt_3" type="text" id="qnt_3" value="0" size="3" data-price="30"
+					onkeyup="CalculateItemsValue()" /></td>
+			<td>$30</td>
+		</tr>
+		<tr>
+			<td>Item D</td>
+			<td><input name="qnt_4" type="text" id="qnt_4" value="0" size="3" data-price="24"
+					onkeyup="CalculateItemsValue()" /></td>
+			<td>$24</td>
+		</tr>
+		<tr>
+			<td bgcolor="#CCCCCC">&nbsp;</td>
+			<td align="right" bgcolor="#CCCCCC"><strong>Total:</strong></td>
+			<td bgcolor="#CCCCCC"><strong>
+					<div id="ItemsTotal">$0</div>
+				</strong></td>
+		</tr>
+	</table>
+
+	</div>
+
+	<script src="script/script.js"></script>
 </body>
+
 </html>
