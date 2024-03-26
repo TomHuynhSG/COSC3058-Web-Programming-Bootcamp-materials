@@ -1,29 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMI Calculator</title>
+    <title>Todo List</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <form id="bmiForm">
-        <div>
-            <label>System:</label>
-            <label><input type="radio" name="system" value="metric" checked> Metric</label>
-            <label><input type="radio" name="system" value="imperial"> Imperial</label>
-        </div>
-        <div>
-            <label for="weight">Weight:</label>
-            <input type="number" id="weight" value="74"> <span id="weightUnit">KG</span>
-        </div>
-        <div>
-            <label for="height">Height:</label>
-            <input type="number" id="height" value="176"> <span id="heightUnit">CM</span>
-        </div>
-        <button type="button" onclick="calculateBMI()">Calculate BMI</button>
-        <div id="result">Your BMI will appear here.</div>
-    </form>
+    <ul id="item-list">
+        <li class="item">Buy groceries</li>
+        <li class="item">Do laundry</li>
+        <li class="item">Clean the bathroom</li>
+        <li class="item">Take out the trash</li>
+    </ul>
 
-    <script src="bmi-calculator.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
+
+
+
