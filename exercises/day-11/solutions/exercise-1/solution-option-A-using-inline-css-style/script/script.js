@@ -1,5 +1,5 @@
 function togglePattern() {
-  // get the clock
+  // get the video element
   var myPattern = document.getElementById('pattern');
 
   // get the current value of the pattern's display property
