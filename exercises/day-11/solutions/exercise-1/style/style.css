@@ -1,9 +1,5 @@
 /* video hidden by default upon page load */
 
-div#pattern {
-    display:none;
-}
-
 button{
     background: #4B0082;
     border: 0;

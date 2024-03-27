@@ -8,12 +8,13 @@
     </head>
     <body>
         <!--free video sourced from https://www.freepik.com/videos -->
-        <div id ="pattern">
+        <div id ="pattern" style="display: none;">
             <video width="320" height="240" controls>
                 <source src="assets/video/swirls.mp4" type="video/mp4">
             </video> 
         </div>
 
+        <!-- As the button got "onclick" EventListener, you do not need to addEventListener to this button in the js file -->
         <button onclick="togglePattern()" id="patternButton">Reveal!</button>
         <script src="script/script.js"></script>
     </body>

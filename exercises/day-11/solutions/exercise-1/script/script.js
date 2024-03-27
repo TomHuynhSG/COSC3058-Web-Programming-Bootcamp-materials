@@ -14,7 +14,6 @@ function togglePattern() {
       myPattern.style.display = 'none';
       // change button text
       patternButton.innerHTML = 'Show pattern';
-      patternButton.className = 'change';
   } else {
       // pattern is hidden. show it
       myPattern.style.display = 'block';
