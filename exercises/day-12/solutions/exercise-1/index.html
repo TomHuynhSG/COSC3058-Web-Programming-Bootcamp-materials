@@ -1,64 +1,51 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<title>Price Calculation Based On Quantity</title>
-	<link type="text/css" rel="stylesheet" href="style/style.css">
-
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Price Calculation Based On Quantity</title>
+    <link type="text/css" rel="stylesheet" href="style/style.css">
 </head>
-
 <body>
-
-	<!-- 
-    AN EXERCISE FOR YOU:
-	can you remove table presentation atttributes to css 
--->
-
-	<table width="400" border="1" cellpadding="5" id="calculator">
-		<tr>
-			<td bgcolor="#CCCCCC">&nbsp;</td>
-			<td width="50" bgcolor="#CCCCCC"><strong>Quantity</strong></td>
-			<td width="50" bgcolor="#CCCCCC"><strong>Price</strong></td>
-		</tr>
-		<tr>
-			<td>Item A</td>
-			<td>
-				<input name="qnt_1" type="text" id="qnt_1" value="0" size="3" data-price="100"
-					onkeyup="CalculateItemsValue()" />
-			</td>
-			<td>$100</td>
-		</tr>
-		<tr>
-			<td>Item B</td>
-			<td><input name="qnt_2" type="text" id="qnt_2" value="0" size="3" data-price="50"
-					onkeyup="CalculateItemsValue()" /></td>
-			<td>$50</td>
-		</tr>
-		<tr>
-			<td>Item C</td>
-			<td><input name="qnt_3" type="text" id="qnt_3" value="0" size="3" data-price="30"
-					onkeyup="CalculateItemsValue()" /></td>
-			<td>$30</td>
-		</tr>
-		<tr>
-			<td>Item D</td>
-			<td><input name="qnt_4" type="text" id="qnt_4" value="0" size="3" data-price="24"
-					onkeyup="CalculateItemsValue()" /></td>
-			<td>$24</td>
-		</tr>
-		<tr>
-			<td bgcolor="#CCCCCC">&nbsp;</td>
-			<td align="right" bgcolor="#CCCCCC"><strong>Total:</strong></td>
-			<td bgcolor="#CCCCCC"><strong>
-					<div id="ItemsTotal">$0</div>
-				</strong></td>
-		</tr>
-	</table>
-
-	</div>
-
-	<script src="script/script.js"></script>
+    <table id="calculator">
+        <tr>
+            <td class="headerCell">&nbsp;</td>
+            <td class="headerCell quantity"><strong>Quantity</strong></td>
+            <td class="headerCell price"><strong>Price</strong></td>
+        </tr>
+        <tr>
+            <td>Item A</td>
+            <td>
+                <input class="quantityInput" name="qnt_1" type="text" id="qnt_1" value="0" size="3" data-price="100" />
+            </td>
+            <td>$100</td>
+        </tr>
+        <tr>
+            <td>Item B</td>
+            <td>
+                <input class="quantityInput" name="qnt_2" type="text" id="qnt_2" value="0" size="3" data-price="50" />
+            </td>
+            <td>$50</td>
+        </tr>
+        <tr>
+            <td>Item C</td>
+            <td>
+                <input class="quantityInput" name="qnt_3" type="text" id="qnt_3" value="0" size="3" data-price="30" />
+            </td>
+            <td>$30</td>
+        </tr>
+        <tr>
+            <td>Item D</td>
+            <td>
+                <input class="quantityInput" name="qnt_4" type="text" id="qnt_4" value="0" size="3" data-price="24" />
+            </td>
+            <td>$24</td>
+        </tr>
+        <tr>
+            <td class="footerCell">&nbsp;</td>
+            <td class="footerCell" align="right"><strong>Total:</strong></td>
+            <td class="footerCell"><strong><div id="ItemsTotal">$0</div></strong></td>
+        </tr>
+    </table>
+    <script src="script/script.js"></script>
 </body>
-
 </html>

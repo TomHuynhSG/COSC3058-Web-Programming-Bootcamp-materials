@@ -1,4 +1,19 @@
 #calculator {
     font-family:Verdana, Geneva, sans-serif;
     font-size:12px;
+    width: 400px;
+    border: 1px solid;
+    cellpadding: 5px;
+}
+
+.headerCell, .footerCell {
+    background-color: #CCCCCC;
+}
+
+.quantity {
+    width: 50px;
+}
+
+.price {
+    width: 50px;
 }
