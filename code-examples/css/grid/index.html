@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>CSS Grid Showcase (Detailed Explanations)</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      margin: 20px;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    .section {
+      margin-bottom: 40px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 20px;
+    }
+    .code-block {
+      background: #f4f4f4;
+      padding: 10px;
+      border: 1px solid #ccc;
+      overflow-x: auto;
+      font-family: monospace;
+      margin-bottom: 10px;
+      white-space: pre-wrap; /* preserve indentation and line breaks */
+    }
+    .demo {
+      border: 1px solid #ccc;
+      padding: 10px;
+      background: #fafafa;
+      margin-bottom: 20px;
+    }
+    /* A general style for grid demos */
+    .demo > div {
+      padding: 10px;
+      text-align: center;
+    }
+
+    /****************************************
+     * 1. Basic Grid Container
+     ****************************************/
+    .grid-container {
+      display: grid;
+      gap: 10px;
+      background: #ddd;
+      padding: 10px;
+    }
+    .grid-container > div {
+      background: #a7c5eb;
+    }
+
+    /****************************************
+     * 2. Basic 3-Column Grid
+     ****************************************/
+    .three-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+      background: #ddd;
+      padding: 10px;
+    }
+    .three-column > div {
+      background: #90caf9;
+    }
+
+    /****************************************
+     * 3. Grid Columns and Rows
+     ****************************************/
+    .grid-columns-rows {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 100px 100px;
+      gap: 5px;
+      background: #ddd;
+      padding: 10px;
+    }
+    .grid-columns-rows > div {
+      background: #ffe0b2;
+    }
+
+    /****************************************
+     * 4. Gaps in Grid
+     ****************************************/
+    .grid-gap {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      background: #ddd;
+      padding: 10px;
+    }
+    .grid-gap > div {
+      background: #c8e6c9;
+    }
+
+    /****************************************
+     * 5. Placing Grid Items
+     ****************************************/
+    .grid-placement {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      background: #ddd;
+      padding: 10px;
+    }
+    .grid-placement .item1 {
+      grid-column: span 2;
+      background: #d1c4e9;
+    }
+    .grid-placement .item2,
+    .grid-placement .item3 {
+      background: #d1c4e9;
+    }
+
+    /****************************************
+     * 6. Implicit Rows
+     ****************************************/
+    .implicit-rows {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 60px;
+      gap: 10px;
+      background: #ddd;
+      padding: 10px;
+    }
+    .implicit-rows > div {
+      background: #ffecb3;
+    }
+
+    /****************************************
+     * 7. Aligning Grid Items
+     ****************************************/
+    .alignment-demo {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      grid-template-rows: repeat(2, 100px);
+      gap: 10px;
+      justify-items: center;
+      align-items: center;
+      background: #ddd;
+      padding: 10px;
+    }
+    .alignment-demo > div {
+      background: #b2dfdb;
+      /* Flexbox for centering text within each cell */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    /****************************************
+     * 8. Grid Template Areas
+     ****************************************/
+    .grid-areas {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      grid-template-rows: auto auto auto;
+      grid-template-areas:
+        "header header"
+        "sidebar content"
+        "footer footer";
+      gap: 10px;
+      background: #ddd;
+      padding: 10px;
+    }
+    .grid-areas .header   { grid-area: header;   background: #a0d2eb; }
+    .grid-areas .sidebar  { grid-area: sidebar;  background: #ffcc80; }
+    .grid-areas .content  { grid-area: content;  background: #c5e1a5; }
+    .grid-areas .footer   { grid-area: footer;   background: #e1bee7; }
+
+    /****************************************
+     * 9. Grid Auto Flow
+     ****************************************/
+    .auto-flow {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 80px);
+      gap: 10px;
+      grid-auto-flow: dense;
+      background: #ddd;
+      padding: 10px;
+    }
+    .auto-flow .wide {
+      grid-column: span 2;
+      background: #f48fb1;
+    }
+    .auto-flow .tall {
+      grid-row: span 2;
+      background: #aed581;
+    }
+    .auto-flow .normal {
+      background: #ffe082;
+    }
+
+    /****************************************
+     * 10. Responsive Grid (Media Queries)
+     ****************************************/
+    .responsive-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      background: #ddd;
+      padding: 10px;
+    }
+    .responsive-grid > div {
+      background: #ffcdd2;
+    }
+    @media (max-width: 600px) {
+      .responsive-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /****************************************
+     * 11. Responsive Grid (auto-fit/minmax)
+     ****************************************/
+    .auto-fit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      background: #ddd;
+      padding: 10px;
+    }
+    .auto-fit-grid > div {
+      background: #ce93d8;
+    }
+  </style>
+</head>
+<body>
+  <h1>CSS Grid Showcase (Detailed Explanations)</h1>
+  <p>
+    This page demonstrates important CSS Grid features in ascending order of complexity.  
+    Each section contains a code snippet, a live demo, and a detailed explanation to help you  
+    understand how and why each property or technique is used.
+  </p>
+
+  <!-- 1. Basic Grid Container -->
+  <div class="section" id="basic-grid">
+    <h2>1. Basic Grid Container</h2>
+    <p>
+      By setting <code>display: grid</code> on a container, all direct children become grid items.  
+      This is the foundation of CSS Grid. You can later define columns, rows, and other properties  
+      to control how these items are laid out.
+    </p>
+    <p>
+      <strong>Key Insight:</strong> Even with no columns or rows explicitly defined, the container  
+      will automatically place items in the first row, then create new rows as needed. The  
+      <code>gap</code> property (also written as <code>grid-gap</code> in older specs) adds space  
+      between grid cells.
+    </p>
+    <div class="code-block">
+      /* HTML */
+      &lt;div class="grid-container"&gt;
+        &lt;div&gt;Item 1&lt;/div&gt;
+        &lt;div&gt;Item 2&lt;/div&gt;
+        &lt;div&gt;Item 3&lt;/div&gt;
+      &lt;/div&gt;
+      
+      /* CSS */
+      .grid-container {
+        display: grid;
+        gap: 10px;
+      }
+    </div>
+    <div class="demo">
+      <div class="grid-container">
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Basic 3-Column Grid -->
+  <div class="section" id="basic-3-column">
+    <h2>2. Basic 3-Column Grid</h2>
+    <p>
+      Using <code>grid-template-columns: 1fr 1fr 1fr</code> creates three equal-width columns.  
+      The <code>1fr</code> unit represents a fraction of the remaining space, making it easy to  
+      create flexible layouts that adjust to the container’s width.
+    </p>
+    <p>
+      <strong>Key Insight:</strong> The <code>fr</code> unit is unique to CSS Grid and is ideal  
+      for fluid layouts. You can combine it with fixed values (like <code>200px</code>) or percentages  
+      to create more complex sizing rules.
+    </p>
+    <div class="code-block">
+      /* HTML */
+      &lt;div class="three-column"&gt;
+        &lt;div&gt;Item 1&lt;/div&gt;
+        &lt;div&gt;Item 2&lt;/div&gt;
+        &lt;div&gt;Item 3&lt;/div&gt;
+        &lt;div&gt;Item 4&lt;/div&gt;
+        &lt;div&gt;Item 5&lt;/div&gt;
+        &lt;div&gt;Item 6&lt;/div&gt;
+      &lt;/div&gt;
+
+      /* CSS */
+      .three-column {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+      }
+    </div>
+    <div class="demo">
+      <div class="three-column">
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+        <div>Item 4</div>
+        <div>Item 5</div>
+        <div>Item 6</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Grid Columns and Rows -->
+  <div class="section" id="grid-columns-rows">
+    <h2>3. Grid Columns and Rows</h2>
+    <p>
+      In this example, we explicitly define both columns and rows. The first row and second row  
+      are each set to <code>100px</code> in height, giving you more direct control over the  
+      layout. Grid items will automatically populate these cells in row-major order.
+    </p>
+    <p>
+      <strong>Key Insight:</strong> Combining explicit row definitions with explicit columns  
+      helps you create a more structured layout. For instance, you might use a fixed-height  
+      header row or a sidebar column. 
+    </p>
+    <div class="code-block">
+      /* HTML */
+      &lt;div class="grid-columns-rows"&gt;
+        &lt;div&gt;A&lt;/div&gt;
+        &lt;div&gt;B&lt;/div&gt;
+        &lt;div&gt;C&lt;/div&gt;
+        &lt;div&gt;D&lt;/div&gt;
+      &lt;/div&gt;
+      
+      /* CSS */
+      .grid-columns-rows {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 100px 100px;
+        gap: 5px;
+      }
+    </div>
+    <div class="demo">
+      <div class="grid-columns-rows">
+        <div>A</div>
+        <div>B</div>
+        <div>C</div>
+        <div>D</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Gaps in Grid -->
+  <div class="section" id="grid-gap">
+    <h2>4. Gaps in Grid</h2>
+    <p>
+      The <code>gap</code> property creates consistent spacing between rows and columns. It is  
+      especially helpful when you want to avoid using margins on each grid item. You can also set  
+      <code>row-gap</code> and <code>column-gap</code> individually.
+    </p>
+    <p>
+      <strong>Key Insight:</strong> Before the <code>gap</code> shorthand was introduced, we used  
+      <code>grid-row-gap</code> and <code>grid-column-gap</code> separately. Now, <code>gap</code>  
+      (or <code>grid-gap</code>) is the recommended approach for all modern browsers.
+    </p>
+    <div class="code-block">
+      /* HTML */
+      &lt;div class="grid-gap"&gt;
+        &lt;div&gt;1&lt;/div&gt;
+        &lt;div&gt;2&lt;/div&gt;
+        &lt;div&gt;3&lt;/div&gt;
+        &lt;div&gt;4&lt;/div&gt;
+      &lt;/div&gt;
+      
+      /* CSS */
+      .grid-gap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+    </div>
+    <div class="demo">
+      <div class="grid-gap">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Placing Grid Items -->
+  <div class="section" id="grid-placement">
+    <h2>5. Placing Grid Items</h2>
+    <p>
+      You can manually position items within the grid using <code>grid-column</code> and  
+      <code>grid-row</code>. Here, the first item spans two columns by using  
+      <code>grid-column: span 2</code>. This explicit placement allows you to create  
+      magazine-style layouts or highlight certain elements.
+    </p>
+    <p>
+      <strong>Key Insight:</strong> You can also specify exact line numbers for more precise  
+      control, such as <code>grid-column: 1 / 3</code> or <code>grid-row: 2 / 4</code>, where  
+      “1 / 3” means from line 1 (inclusive) to line 3 (exclusive).
+    </p>
+    <div class="code-block">
+      /* HTML */
+      &lt;div class="grid-placement"&gt;
+        &lt;div class="item1"&gt;Item 1 (span 2 columns)&lt;/div&gt;
+        &lt;div class="item2"&gt;Item 2&lt;/div&gt;
+        &lt;div class="item3"&gt;Item 3&lt;/div&gt;
+      &lt;/div&gt;
+      
+      /* CSS */
+      .grid-placement {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+      .item1 {
+        grid-column: span 2;
+      }
+    </div>
+    <div class="demo">
+      <div class="grid-placement">
+        <div class="item1">Item 1 (span 2 columns)</div>
+        <div class="item2">Item 2</div>
+        <div class="item3">Item 3</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Implicit Rows -->
+  <div class="section" id="implicit-rows">
+    <h2>6. Implicit Rows</h2>
+    <p>
+      If you have more items than the defined rows, Grid will create additional rows automatically.  
+      The <code>grid-auto-rows</code> property specifies the height for these implicitly created  
+      rows. In this demo, each new row is <code>60px</code> high.
+    </p>
+    <p>
+      <strong>Key Insight:</strong> You can also use <code>auto</code>, <code>min-content</code>,  
+      <code>max-content</code>, or <code>fit-content()</code> for implicit rows, which is useful  
+      if your items vary in size.
+    </p>
+    <div class="code-block">
+      /* HTML */
+      &lt;div class="implicit-rows"&gt;
+        &lt;div&gt;Item 1&lt;/div&gt;
+        &lt;div&gt;Item 2 (taller content)&lt;/div&gt;
+        &lt;div&gt;Item 3&lt;/div&gt;
+        &lt;div&gt;Item 4&lt;/div&gt;
+        &lt;div&gt;Item 5&lt;/div&gt;
+        &lt;div&gt;Item 6&lt;/div&gt;
+        &lt;div&gt;Item 7&lt;/div&gt;
+      &lt;/div&gt;
+      
+      /* CSS */
+      .implicit-rows {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 60px;
+        gap: 10px;
+      }
+    </div>
+    <div class="demo">
+      <div class="implicit-rows">
+        <div>Item 1</div>
+        <div>Item 2 (taller content)</div>
+        <div>Item 3</div>
+        <div>Item 4</div>
+        <div>Item 5</div>
+        <div>Item 6</div>
+        <div>Item 7</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 7. Aligning Grid Items -->
+  <div class="section" id="aligning-items">
+    <h2>7. Aligning Grid Items</h2>
+    <p>
+      <code>justify-items</code> and <code>align-items</code> control the alignment of items  
+      within their cells. In this demo, we use <code>center</code> for both properties to place  
+      each box in the middle of its cell. We also add Flexbox to each grid cell to ensure text  
+      is perfectly centered horizontally and vertically.
+    </p>
+    <p>
+      <strong>Key Insight:</strong> For more complex alignment, you can target individual items  
+      with <code>justify-self</code> or <code>align-self</code>. These properties override  
+      <code>justify-items</code> and <code>align-items</code> for a specific item.
+    </p>
+    <div class="code-block">
+      /* HTML */
+      &lt;div class="alignment-demo"&gt;
+        &lt;div&gt;Box 1&lt;/div&gt;
+        &lt;div&gt;Box 2&lt;/div&gt;
+        &lt;div&gt;Box 3&lt;/div&gt;
+        &lt;div&gt;Box 4&lt;/div&gt;
+        &lt;div&gt;Box 5&lt;/div&gt;
+        &lt;div&gt;Box 6&lt;/div&gt;
+      &lt;/div&gt;
+      
+      /* CSS */
+      .alignment-demo {
+        display: grid;
+        grid-template-columns: repeat(3, 100px);
+        grid-template-rows: repeat(2, 100px);
+        gap: 10px;
+        justify-items: center;
+        align-items: center;
+      }
+      .alignment-demo > div {
+        background: #b2dfdb;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+      }
+    </div>
+    <div class="demo">
+      <div class="alignment-demo">
+        <div>Box 1</div>
+        <div>Box 2</div>
+        <div>Box 3</div>
+        <div>Box 4</div>
+        <div>Box 5</div>
+        <div>Box 6</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. Grid Template Areas -->
+  <div class="section" id="grid-template-areas">
+    <h2>8. Grid Template Areas</h2>
+    <p>
+      <code>grid-template-areas</code> lets you name different parts of the layout and arrange  
+      them in a grid visually. Each item has a <code>grid-area</code> name (e.g., <code>header</code>,  
+      <code>sidebar</code>, etc.). This is especially useful for building page templates (header,  
+      main content, sidebar, footer) that are easy to rearrange later.
+    </p>
+    <p>
+      <strong>Key Insight:</strong> Named grid areas are a powerful way to keep your CSS more  
+      readable and maintainable. Instead of memorizing line numbers, you can rearrange sections  
+      by editing the area strings in your CSS.
+    </p>
+    <div class="code-block">
+      /* HTML */
+      &lt;div class="grid-areas"&gt;
+        &lt;div class="header"&gt;Header&lt;/div&gt;
+        &lt;div class="sidebar"&gt;Sidebar&lt;/div&gt;
+        &lt;div class="content"&gt;Content&lt;/div&gt;
+        &lt;div class="footer"&gt;Footer&lt;/div&gt;
+      &lt;/div&gt;
+      
+      /* CSS */
+      .grid-areas {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: auto auto auto;
+        grid-template-areas:
+          "header header"
+          "sidebar content"
+          "footer footer";
+        gap: 10px;
+      }
+    </div>
+    <div class="demo">
+      <div class="grid-areas">
+        <div class="header">Header</div>
+        <div class="sidebar">Sidebar</div>
+        <div class="content">Content</div>
+        <div class="footer">Footer</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. Grid Auto Flow -->
+  <div class="section" id="grid-auto-flow">
+    <h2>9. Grid Auto Flow</h2>
+    <p>
+      <code>grid-auto-flow</code> determines how items are placed if the grid is already  
+      partially filled. The <code>dense</code> keyword allows the browser to fill empty cells  
+      when possible, which is helpful for masonry-like layouts. Notice how items spanning multiple  
+      columns or rows don’t necessarily leave gaps behind.
+    </p>
+    <p>
+      <strong>Key Insight:</strong> <code>grid-auto-flow: dense</code> can sometimes reorder  
+      your items visually, which might not be ideal for accessibility or reading order. Use it  
+      carefully if you rely on source order for content flow.
+    </p>
+    <div class="code-block">
+      /* HTML */
+      &lt;div class="auto-flow"&gt;
+        &lt;div class="wide"&gt;Wide Item&lt;/div&gt;
+        &lt;div class="tall"&gt;Tall Item&lt;/div&gt;
+        &lt;div class="normal"&gt;Normal&lt;/div&gt;
+        &lt;div class="normal"&gt;Normal&lt;/div&gt;
+        &lt;div class="normal"&gt;Normal&lt;/div&gt;
+        &lt;div class="normal"&gt;Normal&lt;/div&gt;
+      &lt;/div&gt;
+
+      /* CSS */
+      .auto-flow {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 80px);
+        gap: 10px;
+        grid-auto-flow: dense;
+      }
+      .wide {
+        grid-column: span 2;
+      }
+      .tall {
+        grid-row: span 2;
+      }
+    </div>
+    <div class="demo">
+      <div class="auto-flow">
+        <div class="wide">Wide Item</div>
+        <div class="tall">Tall Item</div>
+        <div class="normal">Normal</div>
+        <div class="normal">Normal</div>
+        <div class="normal">Normal</div>
+        <div class="normal">Normal</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 10. Responsive Grid (Media Queries) -->
+  <div class="section" id="responsive-grid">
+    <h2>10. Responsive Grid (Media Queries)</h2>
+    <p>
+      By combining CSS Grid with media queries, you can adapt the layout for different screen sizes.  
+      In this demo, the grid has four columns on screens wider than <code>600px</code>, but collapses  
+      into a single column for narrower screens.
+    </p>
+    <p>
+      <strong>Key Insight:</strong> This approach is straightforward but requires manually defining  
+      breakpoints for each layout change. It’s useful when you have specific design requirements for  
+      different device widths.
+    </p>
+    <div class="code-block">
+      /* HTML */
+      &lt;div class="responsive-grid"&gt;
+        &lt;div&gt;Box 1&lt;/div&gt;
+        &lt;div&gt;Box 2&lt;/div&gt;
+        &lt;div&gt;Box 3&lt;/div&gt;
+        &lt;div&gt;Box 4&lt;/div&gt;
+      &lt;/div&gt;
+      
+      /* CSS */
+      .responsive-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+      }
+      @media (max-width: 600px) {
+        .responsive-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </div>
+    <div class="demo">
+      <div class="responsive-grid">
+        <div>Box 1</div>
+        <div>Box 2</div>
+        <div>Box 3</div>
+        <div>Box 4</div>
+      </div>
+      <p style="font-size: 0.9em; color: #555;">Resize the browser window to see the layout change.</p>
+    </div>
+  </div>
+
+  <!-- 11. Responsive Grid (auto-fit/minmax) -->
+  <div class="section" id="responsive-auto-fit">
+    <h2>11. Responsive Grid (auto-fit/minmax)</h2>
+    <p>
+      This method uses <code>repeat(auto-fit, minmax(200px, 1fr))</code> to create a truly  
+      responsive grid without manually writing media queries. Each column is at least  
+      <code>200px</code> wide but can expand to fill remaining space. Columns automatically wrap  
+      to a new line as needed.
+    </p>
+    <p>
+      <strong>Key Insight:</strong> Using <code>auto-fit</code> or <code>auto-fill</code> with  
+      <code>minmax()</code> is a powerful way to create fluid, responsive grids. It’s often a  
+      simpler approach than multiple media queries for many layouts.
+    </p>
+    <div class="code-block">
+      /* HTML */
+      &lt;div class="auto-fit-grid"&gt;
+        &lt;div&gt;Item 1&lt;/div&gt;
+        &lt;div&gt;Item 2&lt;/div&gt;
+        &lt;div&gt;Item 3&lt;/div&gt;
+        &lt;div&gt;Item 4&lt;/div&gt;
+        &lt;div&gt;Item 5&lt;/div&gt;
+      &lt;/div&gt;
+      
+      /* CSS */
+      .auto-fit-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+      }
+    </div>
+    <div class="demo">
+      <div class="auto-fit-grid">
+        <div>Item 1</div>
+        <div>Item 2</div>
+        <div>Item 3</div>
+        <div>Item 4</div>
+        <div>Item 5</div>
+      </div>
+      <p style="font-size: 0.9em; color: #555;">Resize the browser window to see columns added or removed automatically.</p>
+    </div>
+  </div>
+
+</body>
+</html>
