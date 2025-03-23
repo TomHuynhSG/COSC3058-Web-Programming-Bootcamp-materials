@@ -6,12 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="styles.css" />
+  <title>Flexbox Detailed Examples</title>
 </head>
 
 <body>
   <h1>Flexbox Examples</h1>
+
   <h2>Setup</h2>
-  <p>Create a container and its children without "display: flex":</p>
+  <p>
+    In this first section, we create a container and its child elements without applying
+    <code>display: flex</code>. Notice that the elements behave like normal block or inline elements.
+    Their alignment and spacing follow the regular document flow.
+  </p>
   <div class="container">
     <div class="box box-one">1</div>
     <div class="box box-two">2</div>
@@ -19,7 +25,11 @@
     <div class="box box-four">4</div>
   </div>
 
-  <p>Now adding "display:flex" to the container:</p>
+  <p>
+    Next, we add <code>display: flex</code> to the container. This changes the container's behavior and
+    makes its children become flex items. Flex items now adopt the flexible box layout model which offers
+    more control over alignment, spacing, and distribution.
+  </p>
   <div class="container container-flex">
     <div class="box box-one">1</div>
     <div class="box box-two">2</div>
@@ -28,7 +38,15 @@
   </div>
 
   <h2>1️⃣ flex-direction</h2>
-  <p>"flex-direction: column": Flex items are laying out in vertical column</p>
+  <p>
+    The <code>flex-direction</code> property determines the direction in which the flex items are placed within the container.
+    This can drastically change the visual flow of the items.
+  </p>
+  <p>
+    <strong>"flex-direction: column":</strong>
+    Flex items are arranged vertically, one on top of the other. This can be especially useful when designing
+    vertical menus or lists.
+  </p>
   <div class="container container-flex flex-direction-column">
     <div class="box box-one">1</div>
     <div class="box box-two">2</div>
@@ -36,8 +54,11 @@
     <div class="box box-four">4</div>
   </div>
 
-  <p>"flex-direction: column-reverse": Flex items are laid out in a vertical column but in a reversed order compared to
-    its HTML structure.</p>
+  <p>
+    <strong>"flex-direction: column-reverse":</strong>
+    Similar to <code>column</code>, but the order of the items is reversed from that in the HTML. This is useful
+    when you want the last element in your source code to appear at the top visually.
+  </p>
   <div class="container container-flex flex-direction-column-reverse">
     <div class="box box-one">1</div>
     <div class="box box-two">2</div>
@@ -45,7 +66,10 @@
     <div class="box box-four">4</div>
   </div>
 
-  <p>"flex-direction: row (default)": Flex items are laid out in horizontal rows - which is also the flex default mode.
+  <p>
+    <strong>"flex-direction: row (default)":</strong>
+    Flex items are placed side by side in a horizontal row. This is the default behavior when using
+    <code>display: flex</code>, making it ideal for horizontal navigation bars or layouts.
   </p>
   <div class="container container-flex flex-direction-row">
     <div class="box box-one">1</div>
@@ -54,8 +78,11 @@
     <div class="box box-four">4</div>
   </div>
 
-  <p>"flex-direction: row-reverse": Flex items are laid out in a vertical column but in a reversed order compared to its
-    HTML structure.</p>
+  <p>
+    <strong>"flex-direction: row-reverse":</strong>
+    Flex items are arranged horizontally in the reverse order of the HTML source. This might be useful for
+    right-to-left languages or specific design effects.
+  </p>
   <div class="container container-flex flex-direction-row-reverse">
     <div class="box box-one">1</div>
     <div class="box box-two">2</div>
@@ -64,12 +91,16 @@
   </div>
 
   <h2>2️⃣ flex-wrap</h2>
-  <p>This experiment, we will make container width is only 300px to squeeze items together!</p>
-  <p>"flex-wrap: nowrap" (default):
+  <p>
+    In this section, we modify the container’s width (set to 300px) to demonstrate how flex items behave when there is limited space.
+  </p>
+  <p>
+    <strong>"flex-wrap: nowrap" (default):</strong>
     <ul>
-      <li>By default, flex items will all try to fit onto one line.</li>
-      <li>When wrapping is disabled, flex items squish if there is insufficient room. If they can't squish any further, they may get cut off.</li>
+      <li>By default, all flex items will try to fit on a single line.</li>
+      <li>If there isn’t enough space, items shrink and may eventually be clipped or overflow.</li>
     </ul>
+    This setting is ideal when you want to ensure all items remain in a single row regardless of the container size.
   </p>
   <div class="container-small container-flex">
     <div class="box box-one">1</div>
@@ -84,10 +115,12 @@
     <div class="box box-two">10</div>
   </div>
 
-  <p>"flex-wrap: wrap":
+  <p>
+    <strong>"flex-wrap: wrap":</strong>
     <ul>
-      <li>The flex items break into multiple lines to fit inside the container.</li>
+      <li>The flex items will break onto multiple lines to fit within the container’s width.</li>
     </ul>
+    This is especially useful when designing responsive layouts where items should flow to the next line when space runs out.
   </p>
   <div class="container-small container-flex flex-wrap">
     <div class="box box-one">1</div>
@@ -102,11 +135,13 @@
     <div class="box box-two">10</div>
   </div>
 
-  <p>"flex-wrap: wrap-reverse":
+  <p>
+    <strong>"flex-wrap: wrap-reverse":</strong>
     <ul>
-      <li>The flex items break into multiple lines to fit inside the container but in a reversed order compared to its HTML structure.</li>
-      <li>[Your Task] Let's also resize the container to see how the container's size affects how items break. </li>
+      <li>Flex items break into multiple lines similar to <code>wrap</code>, but the order of the rows is reversed.</li>
+      <li>This property can also be observed by resizing the container, highlighting how available space affects layout order.</li>
     </ul>
+    Use this when you want the last row of items to appear at the top.
   </p>
   <div class="container-small container-flex flex-wrap-reverse">
     <div class="box box-one">1</div>
@@ -122,12 +157,18 @@
   </div>
 
   <h2>3️⃣ justify-content</h2>
-  <p>When you want to distribute space between and around child items along the flex container's main axis.</p>
-  <p>🚩 Beware that using justify-content along with flex-direction: column and flex-direction: row would produce different outputs.</p>
-  <p>"justify-content: flex-start (default):
+  <p>
+    The <code>justify-content</code> property aligns flex items along the main axis. The effect varies when the main axis is horizontal versus vertical.
+  </p>
+  <p>
+    Note: The output of this property will vary if used with <code>flex-direction: column</code> since the main axis changes.
+  </p>
+  <p>
+    <strong>"justify-content: flex-start" (default):</strong>
     <ul>
-      <li>With flex-direction: row as it is the default mode of display:flex.</li>
+      <li>Items are packed toward the start of the container (left in a row layout).</li>
     </ul>
+    This is the default alignment and is useful for standard left-aligned layouts.
   </p>
   <div class="container container-flex justify-content-flex-start">
     <div class="box box-one">1</div>
@@ -136,10 +177,12 @@
     <div class="box box-four">4</div>
   </div>
 
-  <p>"justify-content: flex-end":
+  <p>
+    <strong>"justify-content: flex-end":</strong>
     <ul>
-      <li>With flex-direction: row as it is the default mode of display:flex.</li>
+      <li>Items are aligned to the end of the container (right in a row layout).</li>
     </ul>
+    This can be useful when you want to push content to the right.
   </p>
   <div class="container container-flex justify-content-flex-end">
     <div class="box box-one">1</div>
@@ -148,10 +191,12 @@
     <div class="box box-four">4</div>
   </div>
 
-  <p>"justify-content: center":
+  <p>
+    <strong>"justify-content: center":</strong>
     <ul>
-      <li>With flex-direction: row as it is the default mode of display:flex.</li>
+      <li>Flex items are centered along the main axis.</li>
     </ul>
+    This is ideal for centering elements within the container for a balanced look.
   </p>
   <div class="container container-flex justify-content-center">
     <div class="box box-one">1</div>
@@ -160,10 +205,12 @@
     <div class="box box-four">4</div>
   </div>
 
-  <p>"justify-content: space-around":
+  <p>
+    <strong>"justify-content: space-around":</strong>
     <ul>
-      <li>With flex-direction: row as it is the default mode of display:flex.</li>
+      <li>Items are distributed with equal space around them.</li>
     </ul>
+    This provides equal spacing on both sides of each item, which can help in creating a visually even layout.
   </p>
   <div class="container container-flex justify-content-space-around">
     <div class="box box-one">1</div>
@@ -172,10 +219,12 @@
     <div class="box box-four">4</div>
   </div>
 
-  <p>"justify-content: space-between":
+  <p>
+    <strong>"justify-content: space-between":</strong>
     <ul>
-      <li>With flex-direction: row as it is the default mode of display:flex.</li>
+      <li>Items are distributed so that the first item is at the start and the last is at the end, with equal space between the items.</li>
     </ul>
+    This is useful for layouts where you need maximum space utilization between elements.
   </p>
   <div class="container container-flex justify-content-space-between">
     <div class="box box-one">1</div>
@@ -185,8 +234,13 @@
   </div>
 
   <h2>4️⃣ align-items</h2>
-  <p>Let's add container height to see the effect.</p>
-  <p>"align-items: flex-start":</p>
+  <p>
+    The <code>align-items</code> property aligns flex items along the cross-axis (perpendicular to the main axis). Adding a specific container height allows you to clearly see how items align vertically when in row layout.
+  </p>
+  <p>
+    <strong>"align-items: flex-start":</strong>
+    Items are aligned to the top of the container.
+  </p>
   <div class="container container-flex align-items-flex-start">
     <div class="box box-one">1</div>
     <div class="box box-two">2</div>
@@ -194,14 +248,21 @@
     <div class="box box-four">4</div>
   </div>
 
-  <p>"align-items: flex-end":</p>
+  <p>
+    <strong>"align-items: flex-end":</strong>
+    Items are aligned to the bottom of the container.
+  </p>
   <div class="container container-flex align-items-flex-end">
     <div class="box box-one">1</div>
     <div class="box box-two">2</div>
     <div class="box box-three">3</div>
     <div class="box box-four">4</div>
   </div>
-  <p>"align-items: center":</p>
+
+  <p>
+    <strong>"align-items: center":</strong>
+    Items are centered along the cross-axis, resulting in a balanced vertical layout.
+  </p>
   <div class="container container-flex align-items-center">
     <div class="box box-one">1</div>
     <div class="box box-two">2</div>
@@ -209,7 +270,11 @@
     <div class="box box-four">4</div>
   </div>
 
-  <p>"align-items: stretch":</p>
+  <p>
+    <strong>"align-items: stretch":</strong>
+    When items do not have a set height, they will stretch to fill the container's height. This can help maintain
+    consistency in element sizes across the layout.
+  </p>
   <div class="container container-flex align-items-stretch">
     <div class="box box-one-no-size">1</div>
     <div class="box box-two-no-size">2</div>
@@ -218,12 +283,15 @@
   </div>
 
   <h2>5️⃣ align-content</h2>
-  <p>Let's add container height to see the effect.</p>
-  <p>This property only takes effect on multi-line flexible containers, where flex-wrap is set to either wrap or wrap-reverse).</p>
-  <p>A single-line flexible container (i.e., where flex-wrap is set to its default value, no-wrap) will not reflect align-content.</p>
-  <p>"align-content: stretch (default)":
+  <p>
+    The <code>align-content</code> property aligns rows of flex items when there is extra space in the cross-axis.
+    This property only affects multi-line flex containers (i.e., when <code>flex-wrap</code> is set to <code>wrap</code> or <code>wrap-reverse</code>).
+  </p>
+  <p>
+    <strong>"align-content: stretch (default)":</strong>
     <ul>
-      <li>Beware that you only see this effect when flex items break into multiple lines.</li>
+      <li>Rows stretch to fill the container, creating an even distribution.</li>
+      <li>This effect is visible only when there are multiple lines of flex items.</li>
     </ul>
   </p>
   <div class="container container-flex flex-wrap align-content-stretch">
@@ -249,9 +317,11 @@
     <div class="box box-one">20</div>
   </div>
 
-  <p>"align-content: flex-start":
+  <p>
+    <strong>"align-content: flex-start":</strong>
     <ul>
-      <li>Beware that you only see this effect when flex items break into multiple lines.</li>
+      <li>Rows are packed to the top of the container.</li>
+      <li>Useful for aligning multi-line layouts towards the beginning of the container.</li>
     </ul>
   </p>
   <div class="container container-flex flex-wrap align-content-flex-start">
@@ -277,9 +347,11 @@
     <div class="box box-one">20</div>
   </div>
 
-  <p>"align-content: flex-end":
+  <p>
+    <strong>"align-content: flex-end":</strong>
     <ul>
-      <li>Beware that you only see this effect when flex items break into multiple lines.</li>
+      <li>Rows are packed toward the bottom of the container.</li>
+      <li>This is useful when you want the overall content to appear anchored at the container’s end.</li>
     </ul>
   </p>
   <div class="container container-flex flex-wrap align-content-flex-end">
@@ -305,9 +377,11 @@
     <div class="box box-one">20</div>
   </div>
 
-  <p>"align-content: center":
+  <p>
+    <strong>"align-content: center":</strong>
     <ul>
-      <li>Beware that you only see this effect when flex items break into multiple lines.</li>
+      <li>Rows are centered along the container’s cross-axis.</li>
+      <li>This creates a balanced appearance when there is extra space in the container.</li>
     </ul>
   </p>
   <div class="container container-flex flex-wrap align-content-center">
@@ -332,9 +406,12 @@
     <div class="box box-three">19</div>
     <div class="box box-one">20</div>
   </div>
-  <p>"align-content: space-between":
+
+  <p>
+    <strong>"align-content: space-between":</strong>
     <ul>
-      <li>Beware that you only see this effect when flex items break into multiple lines.</li>
+      <li>Rows are evenly distributed so that the first row is at the top and the last row is at the bottom with equal gaps between.</li>
+      <li>This is effective when you want to maximize the distribution of rows across the container.</li>
     </ul>
   </p>
   <div class="container container-flex flex-wrap align-content-space-between">
@@ -360,9 +437,11 @@
     <div class="box box-one">20</div>
   </div>
 
-  <p>"align-content: space-around":
+  <p>
+    <strong>"align-content: space-around":</strong>
     <ul>
-      <li>Beware that you only see this effect when flex items break into multiple lines.</li>
+      <li>Rows are distributed with equal space around them, meaning there is an equal gap above and below each row.</li>
+      <li>This can be useful to create a breathing space effect in multi-line layouts.</li>
     </ul>
   </p>
   <div class="container container-flex flex-wrap align-content-space-around">
