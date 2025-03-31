@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Thick Card Flip Demo (Clearer/Thicker Edge)</title>
+    <style>
+        :root {
+            /* --- Configuration Variables --- */
+            --card-width: 250px;
+            --card-height: 350px;
+            /* --- Updated Thickness --- */
+            --card-thickness: 20px; /* Increased from 15px */
+            --flip-speed: 0.8s;
+            --perspective: 1000px;
+            /* --- Updated Edge Color for Clarity --- */
+            --edge-color: #666; /* Darker grey for more contrast */
+            --front-bg: linear-gradient(135deg, #667eea, #764ba2);
+            --back-bg: linear-gradient(135deg, #ff9a9e, #fad0c4);
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+            font-family: sans-serif;
+        }
+
+        /* The container sets up the 3D perspective */
+        .flip-card-container {
+            width: var(--card-width);
+            height: var(--card-height);
+            perspective: var(--perspective);
+            margin: 20px;
+            cursor: pointer;
+        }
+
+        /* The card itself handles the flip and thickness simulation */
+        .flip-card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transition: transform var(--flip-speed) ease;
+            transform-style: preserve-3d;
+            transform-origin: center center;
+        }
+
+        /* Apply the flip on hover (or focus for accessibility) */
+        .flip-card-container:hover .flip-card,
+        .flip-card-container:focus-within .flip-card {
+            transform: rotateY(180deg);
+        }
+
+        /* Common styles for both faces */
+        .flip-card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            /* Added a subtle border to the faces themselves for definition */
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .flip-card-front {
+            background: var(--front-bg);
+        }
+
+        .flip-card-back {
+            background: var(--back-bg);
+            transform: rotateY(180deg);
+        }
+
+        /* --- Simulating Thickness --- */
+        .flip-card::before,
+        .flip-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: var(--card-thickness); /* Using the updated thickness */
+            height: 100%;
+            background: var(--edge-color); /* Using the updated, clearer color */
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+            /* Removed gradient for a solid, clear edge */
+        }
+
+        /* Position the left edge */
+        .flip-card::before {
+            left: calc(50% - var(--card-thickness) / 2);
+            transform: rotateY(-90deg) translateZ(calc(var(--card-width) / 2));
+            transform-origin: center left;
+        }
+
+        /* Position the right edge */
+        .flip-card::after {
+            left: calc(50% - var(--card-thickness) / 2);
+            transform: rotateY(90deg) translateZ(calc(var(--card-width) / 2));
+            transform-origin: center right;
+        }
+
+        /* Add some content indication */
+        .flip-card-face p {
+            font-size: 0.9rem;
+            font-weight: normal;
+            margin-top: 15px;
+            opacity: 0.8;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="flip-card-container" tabindex="0">
+        <div class="flip-card">
+            <div class="flip-card-face flip-card-front">
+                FRONT SIDE
+                <p>Hover over me!</p>
+            </div>
+            <div class="flip-card-face flip-card-back">
+                BACK SIDE
+                <p>Edges are thicker & clearer.</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
