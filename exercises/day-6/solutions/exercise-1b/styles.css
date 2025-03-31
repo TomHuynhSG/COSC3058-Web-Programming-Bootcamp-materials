@@ -1,0 +1,22 @@
+/* YOUR STYLE GOES IN HERE */
+.square:nth-child(16n+1),
+.square:nth-child(16n+3),
+.square:nth-child(16n+5),
+.square:nth-child(16n+7),
+.square:nth-child(16n+10),
+.square:nth-child(16n+12),
+.square:nth-child(16n+14),
+.square:nth-child(16n+16) {
+    background-color: #769656;
+}
+
+.square:nth-child(16n+2),
+.square:nth-child(16n+4),
+.square:nth-child(16n+6),
+.square:nth-child(16n+8),
+.square:nth-child(16n+9),
+.square:nth-child(16n+11),
+.square:nth-child(16n+13),
+.square:nth-child(16n+15) {
+    background-color: #eeeed2;
+}
