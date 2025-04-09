@@ -133,11 +133,11 @@
     .page-layout {
       display: grid;
       grid-template-columns: 1fr;
-      grid-template-rows: auto 1fr 2fr auto;
+      grid-template-rows: auto auto 1fr auto;
       gap: 10px;
       background-color: #eee;
       padding: 10px;
-      height: 500px;
+      height: 400px;
       margin-bottom: 20px;
     }
     /* Example 9: Simple Sidebar Layout */
@@ -607,7 +607,7 @@
     <div class="explanation">
       <p><strong>What's happening:</strong> A basic page layout is built with header, navigation, content, and footer rows.</p>
       <ul>
-        <li><code>grid-template-rows: auto 1fr 2fr auto</code> ensures that the header and footer adjust their height based on their content (using auto), while the navigation and content rows expand to fill the remaining space with the content row taking twice as much space as the navigation row.</li>
+        <li><code>grid-template-rows: auto auto 1fr auto</code> lets header and footer size to their content while the main area expands.</li>
         <li>This pattern is common for responsive pages.</li>
       </ul>
       <p><strong>Use this when:</strong> You want a content area that grows to fill available space.</p>
@@ -616,9 +616,9 @@
 .container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr 2fr auto;
+    grid-template-rows: auto auto 1fr auto;
     gap: 10px;
-    height: 500px;
+    height: 400px;
 }
     </div>
     <div class="code">
