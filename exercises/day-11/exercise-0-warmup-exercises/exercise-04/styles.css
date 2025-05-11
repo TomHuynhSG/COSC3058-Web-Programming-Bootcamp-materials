@@ -1,0 +1,6 @@
+body.dark {
+  --bg: #1e1e1e;
+  --fg: #f3f3f3;
+  background: var(--bg);
+  color: var(--fg);
+}
