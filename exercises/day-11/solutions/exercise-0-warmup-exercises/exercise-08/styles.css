@@ -1,0 +1,3 @@
+.answer { display: none; margin: 0; }
+.answer.show { display: block; }
+.question { cursor: pointer; }
